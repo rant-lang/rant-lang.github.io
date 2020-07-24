@@ -1,0 +1,30 @@
+body {
+    background: black;
+}
+
+#wip-message-container {
+    position: absolute;
+    display: flex;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#wip-logo {
+    flex-grow: 0;
+    width: 200px;
+    height: auto;
+}
+
+#wip-message {
+    display: block;
+    font-family: Verdana, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 14pt;
+    color: #ddd;
+    text-align: center;
+}
