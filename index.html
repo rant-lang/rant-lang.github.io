@@ -10,6 +10,7 @@
         <meta property="og:image" content="/img/rant4-logo.png">
         <meta property="og:locale" content="en_US" /> 
         <title>Rant &ndash; The Procedural Generation Language</title>
+        <link rel="icon" href="/favicon.png">
         <link href="/css/main.css" rel="stylesheet">
         <link href="/css/splash.css" rel="stylesheet">
         <link href="/css/fontawesome.min.css" rel="stylesheet">
@@ -193,22 +194,21 @@ Output:
                         <pre><code class="language-rust">use rant::Rant;
 use std::error::Error;
 
-fn main() -> Result<(), Box<dyn Error>> {
+fn main() -&gt; Result&lt;(), Box&lt;dyn Error&gt;&gt; {
     // Create a default Rant context
     let mut rant = Rant::with_random_seed();
 
     // Compile a simple program
     let program = rant.compile_quiet(
-        "{Hello|Hi|Hey} world!"
+        &quot;{Hello|Hi|Hey} world!&quot;
     )?;
 
     // Run the program and print the output
-    let output = rant.run(&program)?;
-    println!("{}", output);
+    let output = rant.run(&amp;program)?;
+    println!(&quot;{}&quot;, output);
 
     Ok(())
-}
-                            </code></pre>
+}</code></pre>
                     </section>
                 </div>
             </section>
