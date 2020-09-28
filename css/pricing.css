@@ -1,0 +1,67 @@
+:root {
+    --tier-card-color: #eee;
+    --tier-card-bg-color: transparent;
+    --tier-card-width: 260px;
+    --tier-card-height: 350px;
+    --tier-card-popular-grow: 16px;
+}
+
+main {
+    font-size: 14pt;
+}
+
+.pricing-tiers {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.tier-card {
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    width: var(--tier-card-width);
+    height: var(--tier-card-height);
+    color: var(--tier-card-color);
+    background: var(--tier-card-bg-color);
+    border: 2px solid var(--tier-card-color);
+    border-radius: 6px;
+    padding: 8px 16px 16px 16px;
+    margin: 12px 8px;
+}
+
+.tier-card > h1:first-child,
+.tier-card > h2:first-child,
+.tier-card > h3:first-child {
+    margin-top: 24px;
+    margin-bottom: 16px;
+}
+
+.tier-card > p {
+    font-size: 0.9em;
+}
+
+.tier-card > .price {
+    font-size: 1.1em;
+    font-weight: 400;
+}
+
+.tier-card > .btn-buy {
+    margin: 0 auto;
+    margin-top: auto;
+    font-weight: 400;
+    padding: 12px 18px;
+}
+
+.tier-card.popular {
+    border-color: var(--highlight-color) !important;
+    color: var(--highlight-color) !important;
+    width: calc(var(--tier-card-width) + var(--tier-card-popular-grow));
+    height: calc(var(--tier-card-height) + var(--tier-card-popular-grow));
+}
+
+.popular button {
+    color: var(--highlight-color) !important;
+    border-color: var(--highlight-color) !important;
+}

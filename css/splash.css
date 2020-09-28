@@ -1,0 +1,139 @@
+:root {
+    --fade-speed: 0.15s;
+}
+
+main {
+    padding-top: 0;
+}
+
+#splash-grid {
+    width: 100vw;
+    height: 100vh;
+    max-height: 100vh;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: grid;
+    padding: 0;
+
+    grid-template-columns: [left] 42% [center] auto [right];
+    grid-template-rows: [top] 1fr [center] 1fr [bottom];
+}
+
+#splash-cell-title {
+    grid-column: center / right;
+    grid-row: center / bottom;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+#splash-title {
+    margin: 0;
+    transform: translateY(-1.5em);
+    font-size: 24pt;
+    font-weight: 500;
+    padding-left: 12px;
+}
+
+#splash-cell-logo {
+    grid-row: top / bottom;
+    grid-column: left / center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+#splash-logo {
+    flex-grow: 0;
+    width: 275px;
+    margin-right: 72px;
+    height: auto;
+}
+
+#splash-title .spinner {
+    position: relative;
+    display: inline-block;
+    height: 1.05em;
+    max-height: 1.05em;
+    word-wrap: normal;
+    white-space: nowrap;
+    margin: 0;
+    padding: 0;
+}
+
+#splash-title .spinner > span.spinner-item {
+    position: absolute;
+    opacity: 0;
+    transition: opacity var(--fade-speed);
+    animation: fade-out-bottom var(--fade-speed);
+    color: var(--color-gray);
+}
+
+#splash-title .spinner span.spinner-item.active {
+    display: inline;
+    opacity: 1;
+    transition: opacity var(--fade-speed);
+    animation: fade-in-top var(--fade-speed);
+}
+
+#splash-title .spinner > span:last-of-type {
+    color: var(--highlight-color);
+}
+
+#splash-title .spinner > span:after {
+    content: "."
+}
+
+@keyframes fade-in-top {
+    from {
+        transform: translateY(-1em);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade-out-bottom {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(1em);
+    }
+}
+
+#splash-nav {
+    display: flex;
+    grid-row: center / bottom;
+    grid-column: center / right;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 24px;
+    width: 48%;
+    padding: 8px 16px;
+}
+
+#splash-nav > a {
+    text-align: center;
+    margin: 0 48px;
+    font-size: 12pt;
+    font-weight: 600;
+    border: 1px solid white;
+    border-radius: 3px;
+    padding: 12px 16px;
+    opacity: 0.75;
+}
+
+#splash-nav > a:first-child {
+    margin-left: 0;
+}
+
+#splash-nav > a:last-child {
+    margin-right: 0;
+}
+
+#splash-nav > a:hover {
+    opacity: 1;
+}

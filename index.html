@@ -1,19 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Rant 4 Coming Soon</title>
-        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="Rant - Home Page">
+        <meta property="og:site_name" content="The Rant Procedural Generation Language">
+        <meta property="og:url" content="https://rant-lang.org">
+        <meta property="og:description" content="Rant is a high-level language for templating and procedural generation. Easily create dynamic templates, dialogue, stories, name generators, test data, and much more with minimal code.">
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="/img/rant4-logo.png">
+        <meta property="og:locale" content="en_US" /> 
+        <title>Rant &ndash; The Procedural Generation Language</title>
+        <link href="/css/main.css" rel="stylesheet">
+        <link href="/css/splash.css" rel="stylesheet">
+        <link href="/css/fontawesome.min.css" rel="stylesheet">
+        <link href="/css/brands.min.css" rel="stylesheet">
+        <link href="/css/hljs/monokai.css" rel="stylesheet">
+        <script src="/js/highlight.pack.js"></script>
+        <script src="/js/hljs-rant.js"></script>
+        <script>
+            hljs.initHighlightingOnLoad();
+        </script>
     </head>
     <body>
-        <div id="wip-message-container">
-            <img id="wip-logo" src="img/rant4-logo.png">
-            <section id="wip-message">
-                <p>Rant 4 is under active development, but it's not quite ready yet.</p>
+        <nav id="navbar">
+            <img class="logo left" src="/img/rant4-logo_logo-white.png" />
+            <a href="/get-started">Get Started</a>
+            <a href="/install">Install</a>
+            <a href="https://docs.rant-lang.org">Documentation</a>
+            <a href="/pricing">Pricing</a>
+        </nav>
+        <main id="content">
+            <section id="splash-grid">
+                <div id="splash-cell-logo">
+                    <img id="splash-logo" src="/img/rant4-logo-text_logo-text-13.png" alt="Rant logo">
+                </div>
+                <div id="splash-cell-title">
+                    <h1 id="splash-title" aria-hidden="true">
+                        The language for procedural
+                        <div class="spinner">
+                            <span class="spinner-item">text processing</span>
+                            <span class="spinner-item">code templating</span>
+                            <span class="spinner-item">storytelling</span>
+                            <span class="spinner-item">worldbuilding</span>
+                            <span class="spinner-item">game dialogue</span>
+                            <span class="spinner-item">character stats</span>
+                            <span class="spinner-item">data structures</span>
+                            <span class="spinner-item">mock data</span>
+                            <span class="spinner-item">anything</span>
+                            <noscript><span class="active highlight">anything</span></noscript>
+                        </div>
+                    </h1>
+                </div>
+                <nav id="splash-nav">
+                    <a href="/get-started">GET STARTED</a>
+                </nav>
+            </section>
+            <section id="section-about" class="theme-a">
+                <h1>Procgen made easy.</h1>
                 <p>
-                    To stay up-to-date on development progress, follow me on Twitter
-                    <a href="https://twitter.com/TheBerkin">@TheBerkin</a>.
+                    Rant is a high-level language for templating and procedural generation.
+                    It enables you to easily create dynamic templates, dialogue, stories, name generators, test data, and much more with minimal code.
+                </p>
+                <h2>Rant is <em>intuitive</em></h2>
+                <p>
+                    Think of Rant as the opposite of Regex: just as a regular expression compares inputs to a pattern, Rant generates matching outputs from a pattern.
+                    If you understand one, you already understand the other!
+                </p>
+                <h2>Rant is <em>concise</em></h2>
+                <p>
+                    Rant's standard library provides built-in utilities for many common use cases, cutting down on the amount of boilerplate you need to write.
+                </p>
+                <p>                    
+                    Even for more complex generation tasks, Rant has your back. With its powerful set of synchronization, branching, and generation tools, you can get results with far less code than conventional programming languages.
+                </p>
+                <h2>Rant is <em>flexible</em></h2>
+                <p>
+                    Rant is infinitely configurable for a wide range of use cases ranging from natural language generation to simple code templating. What you do with it is up to you!
                 </p>
             </section>
-        </div>
+            <section id="section-features" class="theme-b">
+                <h1>Features</h1>
+                <div id="feature-showcase">
+                    <section class="feature">
+                        <div class="feature-desc">
+                            <h3>Branching</h3>
+                            <p>
+                                Multiple possibilities? Not a problem. Branch off your code in unlimited directions by letting Rant pick randomly, 
+                                or use one of the numerous other available selection modes.
+                            </p>
+                        </div>
+                        <pre><code class="language-rant">The quick {red|brown|orange} fox...
+
+##
+Possible outputs:
+  The quick red fox...
+  The quick brown fox...
+  The quick orange fox...
+##
+                        </code></pre>
+                    </section>
+                    <section class="feature">
+                        <div class="feature-desc">
+                            <h3>Dynamic type system</h3>
+                            <p>
+                                Take advantage of Rant's dynamic type system with several built-in primitive and collection types.
+                                Influenced by languages like Lua and Python, Rant provides a familiar way to work with any kind of data. 
+                            </p>
+                        </div>
+                        <pre><code class="language-rant">&lt;$lucky-number=[num:1;100]&gt;
+
+Your lucky number is &lt;lucky-number&gt;.
+                        </code></pre>
+                    </section>
+                    <section class="feature">
+                        <div class="feature-desc">
+                            <h3>Automatic output formatting</h3>
+                            <p>
+                                Configure your programs to passively perform tasks like
+                                automatic capitalization, number formatting, and whitespace normalization on your output.
+                            </p>
+                        </div>
+                        <pre><code class="language-rant">[case-fmt:upper]
+hello world!
+
+# Output: HELLO WORLD!  
+                            </code></pre>
+                    </section>
+                    <section class="feature">
+                        <div class="feature-desc">
+                            <h3>Modules</h3>
+                            <p>
+                                Rant's module system allows you to create reusable libraries of functions and import them into other programs with a single function call.
+                            </p>
+                        </div>
+                        <pre><code class="language-rant"># laughter.rant
+&lt;module=@()&gt;
+[module/laugh: length] {
+    [rep:&lt;length&gt;]{ha}
+}
+
+# main.rant
+[require:laughter]
+[laughter/laugh: 8] # "hahahahahahahaha"
+                            </code></pre>
+                    </section>
+                    <section class="feature">
+                        <div class="feature-desc">
+                            <h3>Entanglement</h3>
+                            <p>
+                                If you need to synch&shy;ronize RNG behavior in multiple places, 
+                                Rant's built-in en&shy;tanglement utilities make it easy to reuse RNG sequences 
+                                in different parts of your program.
+                            </p>
+                        </div>
+                        <pre><code class="language-rant">[fork:a]{woo|yee}[unfork]- 
+[fork:a]{hoo|haw}[unfork]!
+
+# Outputs "woo-hoo!" or "yee-haw!"
+
+                            </code></pre>
+                    </section>
+                    <section class="feature">
+                        <div class="feature-desc">
+                            <h3>Cross-platform</h3>
+                            <p>
+                                Rant is written in <a href="https://rust-lang.org">Rust</a>, which means it can run on any&shy;thing that has Rust compiler support.
+                                Enjoy seam&shy;less port&shy;ability of your Rant programs across Windows, Mac, Linux, and WebAssembly.
+                            </p>
+                        </div>
+                        <pre><code class="language-rust">use rant::Rant;
+use std::error::Error;
+
+fn main() -> Result<(), Box<dyn Error>> {
+    // Create a default Rant context
+    let mut rant = Rant::with_random_seed();
+
+    // Compile a simple program
+    let program = rant.compile_quiet(
+        "{Hello|Hi|Hey} world!"
+    )?;
+
+    // Run the program and print the output
+    let output = rant.run(&program)?;
+    println!("{}", output);
+
+    Ok(())
+}
+                            </code></pre>
+                    </section>
+                </div>
+            </section>
+            <section id="section-learn" class="theme-c">
+                <h1>Learn Rant</h1>
+                <p>
+                    If you want to jump right in, the best place to start is the <a href="/get-started/">Get Started</a> page.
+                    It goes over installing Rant, writing basic programs, and running them in the included CLI tool.
+                </p>
+                <p>
+                    When your appetite for knowledge becomes insatiable, check out the <a href="https://docs.rant-lang.org">Rant docs</a> for information on every part of Rant.
+                </p>
+            </section>            
+        </main>
+        <footer>
+            <section>
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="/install">Installation</a></li>
+                    <li><a href="https://docs.rant-lang.org">Documentation</a></li>
+                    <li><a href="/pricing">Pricing</a></li>
+                </ul>
+            </section>
+            <section>
+                <h3>Legal stuff</h3>
+                <ul>
+                    <li><a href="/licenses">Licenses</a></li>
+                </ul>
+            </section>
+            <section>
+                <h3>Social</h3>
+                <ul class="icon-list">
+                    <li><a href="https://twitter.com/RantLang" title="Twitter" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="https://reddit.com/r/RantLang" title="Reddit" target="_blank"><i class="fab fa-reddit-alien"></i></a></li>
+                    <li><a href="https://github.com/rant-lang" title="GitHub" target="_blank"><i class="fab fa-github"></i></a></li>
+                    <li><a href="https://discord.gg/5n7bnAD" title="Discord" target="_blank"><i class="fab fa-discord"></i></a></li>
+                </ul>
+            </section>
+        </footer>
+        <script type="text/javascript" async>
+        async function sleep(ms) {
+            await new Promise(r => setTimeout(r, ms));
+        }
+
+        async function animateSpinner() {
+            let waitIntervalMs = 750;
+            let lastElement = null;
+            for (element of document.querySelectorAll("#splash-title > .spinner > span")) {
+                if (lastElement) {
+                    lastElement.classList.remove("active");
+                }
+                element.classList.add("active");
+                lastElement = element;
+                await sleep(waitIntervalMs);
+            }
+        }
+        
+        animateSpinner();
+        </script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179100611-1"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-179100611-1');
+        </script>
+
     </body>
 </html>
