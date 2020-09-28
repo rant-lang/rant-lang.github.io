@@ -55,8 +55,9 @@ main {
 #splash-title .spinner {
     position: relative;
     display: inline-block;
-    height: 1.05em;
-    max-height: 1.05em;
+    height: 1em;
+    max-height: 1em;
+    line-height: 1.3em;
     word-wrap: normal;
     white-space: nowrap;
     margin: 0;
