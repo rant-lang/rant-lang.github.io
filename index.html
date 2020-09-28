@@ -114,17 +114,22 @@ Your lucky number is &lt;lucky-number&gt;.
                     </section>
                     <section class="feature">
                         <div class="feature-desc">
-                            <h3>Automatic output formatting</h3>
+                            <h3>Automatic formatting</h3>
                             <p>
                                 Configure your programs to passively perform tasks like
                                 automatic capitalization, number formatting, and whitespace normalization on your output.
                             </p>
                         </div>
-                        <pre><code class="language-rant">[case-fmt:upper]
-hello world!
+                        <pre><code class="language-rant">[case-fmt:upper]hello world!\n
+[case-fmt:first]hello world!\n
+[case-fmt:each-word]hello world!\n
 
-# Output: HELLO WORLD!  
-                            </code></pre>
+##
+Output: 
+  HELLO WORLD!
+  Hello world!
+  Hello World!
+##</code></pre>
                     </section>
                     <section class="feature">
                         <div class="feature-desc">
