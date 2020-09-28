@@ -6,16 +6,70 @@
         <link href="/css/main.css" rel="stylesheet">
     </head>
     <body>
-        <nav id="navbar">
+        <nav id="navbar" class="clear no-sticky">
             <a class="left logo" href="/"><img src="/img/rant4-logo_logo-white.png" /></a>
             <a href="/get-started">Get Started</a>
             <a href="/install">Install</a>
             <a href="https://docs.rant-lang.org">Documentation</a>
             <a href="/pricing">Pricing</a>
         </nav>
-        <main>
+        <main class="theme-b">
             <section>
                 <h1>Installing Rant</h1>
+                <p>
+                    The easiest way to install Rant is with <a href="https://doc.rust-lang.org/cargo/getting-started/installation.html" target="_blank">Cargo</a>.
+                    These instructions should be exactly the same for Windows, Mac, and Linux.
+                </p>
+                <p>
+                    Verify your Cargo installation and then type the following into your favorite shell:
+                </p>
+                <code block>
+                    cargo install rant --all-features
+                </code>
+                <p>
+                    If you are installing a prerelease version, you will also need to add a <code>--version</code> option with the desired version number.
+                    For example, if you wanted to install the 6th alpha release, you would add <code>--version=4.0.0-alpha.6</code>.
+                </p>
+                <p>
+                    Once Rant has finished installing, you can run the CLI in REPL mode by typing <code>rant</code> in your shell and pressing Enter.
+                </p>
+                <p>
+                    You should be greeted by a prompt similar to the one shown below: 
+                </p>
+                <code block>
+                    Rant 4.0.0-alpha.6 (x86_64-pc-windows-msvc)<br/>
+                    Run this tool with --help for available options.<br/>
+                    >>
+                </code>
+                <p>
+                    If this displays, Rant is installed and working! You can now type Rant code and press Enter to see its output.
+                </p>
+                <section>
+                    <h2>Using Rant in your application or library</h2>
+                    Chances are good that you are a developer interested in integrating Rant into your program.
+                    Perfect! This is even easier than installing it as a standalone application.
+                    <section>
+                        <h3>Rust</h3>
+                        <p>
+                            Since Rant is written in Rust, importing it into your Rust project is 
+                            as simple as adding the following line to the dependencies section of your Cargo.toml:
+                        </p>
+                        <code block>
+                            rant = "*"
+                        </code>
+                        <p>
+                            That's it!
+                        </p>
+                    </section>
+                    <section>
+                        <h3>Other languages</h3>
+                        <p>
+                            As of writing this, Rant does not currently have any wrappers for usage in other languages;
+                            however, priority will be given to developing .NET and WebAssembly wrappers in the near future. 
+                            Be sure to keep an eye out!
+                        </p>
+                    </section>
+                </section>
             </section>
         </main>
     </body>

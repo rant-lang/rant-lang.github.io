@@ -20,6 +20,7 @@
     --theme-c-color: #fff;
     --footer-bg-color:  rgb(36, 20, 54);
     --footer-color: #fff;
+    --code-bg-color: #0b0b1d;
 }
 
 /* Thin */
@@ -126,7 +127,7 @@ body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-size: 16pt;
+    font-size: 14pt;
     font-weight: 300;
 }
 
@@ -135,7 +136,7 @@ main > section:first-of-type {
 }
 
 main > section:only-child {
-    height: 100vh;
+    min-height: 100vh;
     box-sizing: border-box;
 }
 
@@ -166,6 +167,21 @@ p a {
 
 b, strong {
     font-weight: 500;
+}
+
+code {
+    font-family: "Courier New", monospace;
+    font-size: 1rem;
+    background: var(--code-bg-color);
+    margin: 12px 0;
+    padding: 0 4px;
+    border-radius: 3px;
+}
+
+code[block] {
+    display: block;
+    padding: 1em;
+    border-radius: 6px;
 }
 
 h1 {
