@@ -4,18 +4,199 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Rant - Getting Started</title>
         <link href="/css/main.css" rel="stylesheet">
+        <link href="/css/hljs/monokai.css" rel="stylesheet">
+        <script src="/js/highlight.pack.js"></script>
+        <script src="/js/hljs-rant.js"></script>
+        <script>
+            hljs.initHighlightingOnLoad();
+        </script>
     </head>
     <body>
-        <nav id="navbar">
+        <nav id="navbar" class="clear no-sticky">
             <a class="left logo" href="/"><img src="/img/rant4-logo_logo-white.png" /></a>
             <a href="/get-started">Get Started</a>
             <a href="/install">Install</a>
             <a href="https://docs.rant-lang.org">Documentation</a>
             <a href="/pricing">Pricing</a>
         </nav>
-        <main>
+        <main >
             <section>
                 <h1>Getting Started with Rant</h1>
+                <p>
+                    This guide will walk you through the basics of the Rant language 
+                    and creating some simple programs.
+                </p>
+                <p>
+                    First, follow the instructions on the <a href="/install">Installation guide</a> to install Rant as a standalone application.
+                    Make sure it installs smoothly and the <code>rant</code> command works, since we'll be using that to run programs.
+                </p>
+                <section>
+                    <h2>Rant is all about printing</h2>
+                    <p>
+                        At its core, Rant is a hybrid of a markup language and an imperative programming language.
+                        Not only can you print to the output, but you can also call functions, define variables, 
+                        modify stored variables, and other imperative stuff.
+                    </p>
+                    <p>
+                        This has a few major implications for program structure. 
+                        The most obvious one is that most plain text will come out the same way it went in.
+                    </p>
+                    <pre><code block class="language-rant">Hello world!
+# Prints "Hello world!"</code></pre>
+                    <p>
+                        This also makes it very intuitive to add branching options to some text.
+                        To do this, we use a <b>block</b>. A block is simply an array of smaller Rant programs.
+                        Blocks can contain no elements, one element, or a hundred elements. It's up to you.
+                    </p>
+                    <pre><code block class="language-rant">{Hello|Hi|Hey} world!</code></pre>
+                    <p>
+                        Try writing the above example in the Rant REPL and running it a few times.
+                        Right away, you'll probably notice that the output will be one of three strings:
+                        <ul>
+                            <li>"Hello world!"</li>
+                            <li>"Hi world!"</li>
+                            <li>"Hey world!"</li>
+                        </ul>
+                        By default, Rant chooses a random block element to run; however, this can be customized (more about this later).
+                    </p>
+                    <p>
+                        Blocks are Rant's most powerful feature.
+                        You will see later in this guide how they can do much more than simple branching.
+                    </p>
+                </section>
+                <section>
+                    <h2>Functions</h2>
+                    <p>
+                        At this point you are probably bored of printing text with some random branches.
+                        Let's try calling some <b>functions</b> to add more variation to our output.
+                    </p>
+                    <p>
+                        Rant has a modestly-sized standard library of functions that are tailored to procedural generation use cases.
+                        Let's check out some of Rant's <b>generator</b> functions, which are used to generate random numbers, strings, and more.
+                    </p>
+                    <p>
+                        Function calls are done inside of square brackets, like <code>[this]</code>.
+                        The word inside the brackets is the name of the function to call.
+                        Let's look at a very basic function that doesn't need any arguments:
+                    </p>
+                    <pre><code block class="language-rant">[dig]</code></pre>
+                    <p>
+                        Paste that into the Rant CLI and run it a few times.
+                        It should print a single, random decimal digit, e.g. 4.
+                        <code block>4</code>
+                    </p>
+                    <p>
+                        Once you've calmed down from this exciting development, let's make it do something different. 
+                        Change the function call to look like this and try running it again:
+                    </p>
+                    <pre><code block class="language-rant">[dig: 16]</code></pre>
+                    <p>
+                        When you run this, it will print a much bigger string of digits-- 16 digits, to be exact.
+                    </p>
+                    <code block>1153687747958403</code>
+                    <p>
+                        What you just did was pass an argument, a digit count, to the <code>[dig]</code> function to change how many digits it generates.
+                    </p>
+                    <p>
+                        But what about multiple arguments? Let's try something slightly different. 
+                        Let's call the <code>[num]</code> function, which generates a random integer, 
+                        and pass in the minimum and maximum values our random number should be.
+                    </p>
+                    <pre><code block class="language-rant"># Generate an integer between 1 and 100 (inclusive)
+[num: 1; 100]</code></pre>
+                    <p>
+                        Running this, you should get an output of some number between 1 and 100:
+                    </p>
+                    <code block>41</code>
+                    <p>
+                        When calling a function with arguments, the same pattern is always followed:
+                        a colon comes after the function name, and then an argument list delimited with semicolons.
+                    </p>
+                </section>
+                <section>
+                    <h2>The great and powerful block</h2>
+                    <p>
+                        As mentioned earlier, blocks have a few different uses in Rant.
+                        In this section we will explore one such use: the <strong>repeater</strong>.
+                    </p>
+                    <p>
+                        When Rant runs a block, it looks at a set of registers called <strong>block attributes</strong>.
+                        Block attributes control various aspects of block behavior, such as repetition count,
+                        separators, selection behavior, and other fine details. The user can set these attributes
+                        to change what the next block does when it resolves.
+                    </p>
+                    <p>
+                        A repeater is nothing but a block that can run multiple times in a row.
+                        To do this, we set the "repetitions" attribute using the <code>[rep]</code> function.
+                    </p>
+                    <p>
+                        Try running this code:
+                    </p>
+                    <pre><code block class="language-rant">[rep:10]{Heads\n|Tails\n}</code></pre>
+                    <p>
+                        The output should look similar to this:
+                    </p>
+                    <code block>
+                        Tails<br>
+                        Tails<br>
+                        Heads<br>
+                        Tails<br>
+                        Heads<br>
+                        Heads<br>
+                        Heads<br>
+                        Tails<br>
+                        Tails<br>
+                        Heads
+                    </code>
+                    <p>
+                        What's happening here is that the <code>[rep:10]</code> call affects the number of times the block after it
+                        will run. Each times the block runs, Rant treats it like a completely new block, selecting a random branch each time!
+                    </p>
+                    <p>
+                        You may have noticed the little <code>\n</code> after each element.
+                        This is an <strong>escape sequence</strong>, which are used to print special characters.
+                        The <code>\n</code> escape sequence prints a newline.
+                    </p>
+                    <p>
+                        It's probably not too bad to add this separator at the end of "Heads" and "Tails", but if we add more options,
+                        it's a bit messy to repeat the separator on each element. It's also prone to errors. 
+                        Luckily, Rant has a separator attribute just for this! 
+                    </p>
+                    <p>
+                        To add a separator to a repeater, call the <code>[sep]</code> function and pass in your separator value as an argument.
+                        Let's modify our coin-flipping program from before to take advantage of this:
+                    </p>
+                    <pre><code block class="language-rant">[rep:10][sep:\n]{Heads|Tails}</code></pre>
+                    <p>
+                        Running this again, we can see that it produces almost the exact same output format:
+                    </p>
+                    <code block>
+                        Tails
+                        Tails
+                        Heads
+                        Heads
+                        Tails
+                        Tails
+                        Tails
+                        Tails
+                        Heads
+                        Heads
+                    </code>
+                    <p>
+                        There is one important difference to note about using <code>[sep]</code> versus an explicit separator on each element:
+                        the last element will not have any separator after it! This makes <code>[sep]</code> super useful for cases
+                        where you only want a separator between two elements.
+                    </p>
+                    <section>
+                        <h3>Selectors</h3>
+                        <p>
+                            There is one more important block attribute we haven't covered yet: the <strong>selector</strong>.
+                            Selectors tell Rant how to choose which branch of a block to run.
+                            There are many use cases where different selection strategies are desirable, and selectors make it easy!
+                        </p>
+                        <p>TODO</p>
+                    </section>
+                </section>
             </section>
         </main>
     </body>

@@ -21,6 +21,7 @@
     --footer-bg-color:  rgb(36, 20, 54);
     --footer-color: #fff;
     --code-bg-color: #0b0b1d;
+    --para-line-height: 1.5em;
 }
 
 /* Thin */
@@ -158,6 +159,10 @@ main > section:only-child {
 a {
     color: var(--color-white);
     text-decoration: none;
+}
+
+p {
+    line-height: var(--para-line-height);
 }
 
 p a {
