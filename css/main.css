@@ -358,7 +358,7 @@ code {
 }
 
 .feature > .feature-desc > p {
-    text-align: justify;
+    text-align: left;
     text-justify: inter-word;
 }
 

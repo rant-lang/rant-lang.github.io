@@ -52,7 +52,7 @@ let rant_def = {
         {
           // Function call
           className: 'title',
-          begin: /(?<=\[)([\w-_]+|\!)/g
+          begin: /(?<=\[)([\w-_/]+|\!)/g
         },
         {
           // Variable accessor start
