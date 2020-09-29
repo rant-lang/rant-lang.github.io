@@ -2,6 +2,13 @@
 <html lang="en">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="Rant - Getting Started">
+        <meta property="og:site_name" content="The Rant Procedural Generation Language">
+        <meta property="og:url" content="https://rant-lang.org">
+        <meta property="og:description" content="Rant is a high-level language for templating and procedural generation. Easily create dynamic templates, dialogue, stories, name generators, test data, and much more with minimal code.">
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="/img/rant4-logo.png">
+        <meta property="og:locale" content="en_US" /> 
         <title>Rant - Getting Started</title>
         <link href="/css/main.css" rel="stylesheet">
         <link href="/css/hljs/monokai.css" rel="stylesheet">
@@ -45,10 +52,18 @@
 # Prints "Hello world!"</code></pre>
                     <p>
                         This also makes it very intuitive to add branching options to some text.
-                        To do this, we use a <b>block</b>. A block is simply an array of smaller Rant programs.
-                        Blocks can contain no elements, one element, or a hundred elements. It's up to you.
+                        To do this, we use a <b>block</b>.
+                    </p>
+                    <p>
+                        A block is simply an array of smaller Rant programs.
+                        Blocks can contain as many elements as you want, and the elements can be any valid Rant code 
+                        (even nothing at all).
                     </p>
                     <pre><code block class="language-rant">{Hello|Hi|Hey} world!</code></pre>
+                    <p>
+                        In the above snippet, we have a block with three elements.
+                        Blocks are denoted by a pair of curly braces with pipe characters separating the elements.
+                    </p>
                     <p>
                         Try writing the above example in the Rant REPL and running it a few times.
                         Right away, you'll probably notice that the output will be one of three strings:
@@ -86,7 +101,7 @@
                         <code block>4</code>
                     </p>
                     <p>
-                        Once you've calmed down from this exciting development, let's make it do something different. 
+                        Let's make it do something different. 
                         Change the function call to look like this and try running it again:
                     </p>
                     <pre><code block class="language-rant">[dig: 16]</code></pre>
@@ -171,15 +186,15 @@
                         Running this again, we can see that it produces almost the exact same output format:
                     </p>
                     <code block>
-                        Tails
-                        Tails
-                        Heads
-                        Heads
-                        Tails
-                        Tails
-                        Tails
-                        Tails
-                        Heads
+                        Tails<br>
+                        Tails<br>
+                        Heads<br>
+                        Heads<br>
+                        Tails<br>
+                        Tails<br>
+                        Tails<br>
+                        Tails<br>
+                        Heads<br>
                         Heads
                     </code>
                     <p>

@@ -1,5 +1,6 @@
 :root {
     --default-font-family: "Roboto", sans-serif;
+    --default-text-color: #f2f2f2;
     --highlight-color: #fcea4c;
     --main-padding-h: 24%;
     --main-bg-color:  rgb(30, 13, 51);
@@ -122,7 +123,7 @@
 
 body {
     background: var(--main-bg-color);
-    color: white;
+    color: var(--default-text-color);
     font-family: var(--default-font-family);
     overflow-x: hidden;
     box-sizing: border-box;
